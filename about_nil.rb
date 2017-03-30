@@ -33,6 +33,6 @@ class AboutNil < Neo::Koan
     # or
     #    obj == nil
     # Why?
-  end
+  end  
 
 end
