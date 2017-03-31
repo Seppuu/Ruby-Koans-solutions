@@ -100,7 +100,7 @@ class AboutIteration < Neo::Koan
     # Files act like a collection of lines
     File.open("example_file.txt") do |file|
       upcase_lines = file.map { |line| line.strip.upcase }
-      assert_equal ["THIS", "IS", "A", "TEST", "", "//不明白的部分", "", "正则表达式 \\B 边界", "DEF TEST_SLASH_B_ANCHORS_TO_A_WORD_BOUNDARY", "ASSERT_EQUAL __, \"BOVINE VINES\"[/\\BVINE./]", "END", "", "//全局常量在类中被引用", "NESTED_CONSTANTS"], upcase_lines
+      assert_equal ["THIS", "IS", "A", "TEST"], upcase_lines
     end
 
     # NOTE: You can create your own collections that work with each,
