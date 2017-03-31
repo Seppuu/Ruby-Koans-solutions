@@ -2,10 +2,3 @@ this
 is
 a
 test
-
-//不明白的部分
-
-正则表达式 \b 边界
-def test_slash_b_anchors_to_a_word_boundary
-    assert_equal __, "bovine vines"[/\bvine./]
-  end
