@@ -30,7 +30,66 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 # Your goal is to write the score method.
 
 def score(dice)
-  # You need to write this method
+  
+  result = 0
+  
+   #先看三个数相同的
+   three_set_array = dice.select{ |e|
+      
+       dice.count(e) >= 3
+      
+      
+   }.uniq
+  
+   for num in three_set_array
+       #查看是3个还是大于3个.
+    if num == 1
+        if dice.count(num) == 3 
+         #1 等于三个
+          result += 1 * 1000
+        else
+         #1 大于三个.
+          result += 1 * 1000 + 100 *(dice.count(num) - 3)
+        end
+      
+    else
+
+       if num == 5 && dice.count(num) > 3 
+
+         #如果是5,并且大于3个数字
+         result += 500 + 50 * (dice.count(num) - 3)
+        
+       else
+         result += num * 100
+       end
+  
+    end
+      
+    #将num从dice中移除.
+    dice.delete(num)
+
+   end
+
+
+  #剩下的数字,都小于3个.
+  for num in dice
+
+    if num == 1 
+
+      result += 100
+      
+    elsif num == 5
+
+      result += 50
+    else 
+
+    end
+
+  end
+
+  return result
+  
+  
 end
 
 class AboutScoringProject < Neo::Koan
