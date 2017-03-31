@@ -14,6 +14,16 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+    
+
+  raise TriangleError if [a,b,c].min <= 0
+  
+  
+  
+  x, y, z = [a,b,c].sort
+  
+  raise TriangleError if x + y <= z
+  
   
   if a == b && a == c && b = c
       return :equilateral
