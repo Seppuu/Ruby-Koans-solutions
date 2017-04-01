@@ -12,7 +12,7 @@ class AboutModules < Neo::Koan
   end
 
   def test_cant_instantiate_modules
-    assert_raise(___) do
+    assert_raise(NoMethodError) do
       Nameable.new
     end
   end
@@ -58,6 +58,6 @@ class AboutModules < Neo::Koan
 
   def test_classes_can_override_module_methods
     fido = Dog.new
-    assert_equal __, fido.here
+    assert_equal :in_object, fido.here
   end
 end
